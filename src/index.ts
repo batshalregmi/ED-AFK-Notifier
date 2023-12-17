@@ -10,6 +10,7 @@ function sendNotification(device, title: String, body: String) {
 
 
 console.log("Running...");
+sendNotification({}, "ED AFK Notifier", "ED AFK Notifier is running!");
 const JournalOptions: JournalOptions = {
     watch: true,
     position: "end"
@@ -50,4 +51,3 @@ try {
 } finally {
     await journal.close();
 }
-sendNotification({}, "ED AFK Notifier", "ED AFK Notifier is running!");
