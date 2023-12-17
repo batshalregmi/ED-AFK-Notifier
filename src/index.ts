@@ -43,6 +43,11 @@ try {
                 console.log("Police attack detected, Commander!")
                 sendNotification({}, "Police Attack", "Police attack detected, Commander!");
             }
+        } else if (event.event === "CollectCargo") {
+            if (event.Stolen) {
+                console.log("Stolen cargo collected, Commander!")
+                sendNotification({}, "Stolen Cargo Collected", "Stolen cargo collected, Commander!");
+            }
         }
     };
 } catch (err) {
