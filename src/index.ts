@@ -23,7 +23,7 @@ try {
                 sendNotification({}, "Shields Are Down", "Shields are down, Commander!")
                 console.log(event.timestamp + " Shields are down, Commander!")
             }
-        } else if (event.event === "HullDamage") {
+        } else if (event.event === "HullDamage" && event.PlayerPilot) {
             const hullPercentage = event.Health * 100;
             if (hullPercentage < 75 || hullPercentage < 50 || hullPercentage < 25) {
                 sendNotification({}, "Hull Damage", `Hull damage detected, Commander! Hull is at ${hullPercentage}%`);
