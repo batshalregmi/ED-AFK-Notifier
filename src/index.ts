@@ -39,7 +39,7 @@ try {
                 console.log(event.Active.length + " Active missions, Commander!")
             }
         } else if (event.event === "ReceiveText") {
-            if (event.From_Localised === "System Authority Vessel" && event.Message.includes("Police_Attack")) { //Added due to a bug in ED where police might attack you for no reason. Can be removed if fixed.
+            if (event.From_Localised === "System Authority Vessel" && (event.Message.includes("Police_Attack") || event.Message.includes("OverwatchAttackRun"))) { //Added due to a bug in ED where police might attack you for no reason. Can be removed if fixed.
                 console.log("Police attack detected, Commander!")
                 sendNotification({}, "Police Attack", "Police attack detected, Commander!");
             }
