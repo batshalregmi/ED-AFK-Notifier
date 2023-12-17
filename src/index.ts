@@ -1,4 +1,4 @@
-import { Journal, JournalOptions } from "@kayahr/ed-journal";
+import { Journal, JournalOptions, MissionAccepted } from "@kayahr/ed-journal";
 import PushBullet from "pushbullet";
 import dotenv from "dotenv";
 dotenv.config();
@@ -8,9 +8,7 @@ function sendNotification(device, title: String, body: String) {
     pusher.note(device, title, body)
 }
 
-
 console.log("Running...");
-sendNotification({}, "ED AFK Notifier", "ED AFK Notifier is running!");
 const JournalOptions: JournalOptions = {
     watch: true,
     position: "end"
@@ -32,13 +30,6 @@ try {
         } else if (event.event === "FighterDestroyed") {
             sendNotification({}, "Fighter Destroyed", "Fighter destroyed, Commander!")
             console.log(event.timestamp + ": Fighter destroyed, Commander!")
-        } else if (event.event === "Missions") {
-            if (event.Active.length === 0) {
-                console.log(event.timestamp + ": No active missions, Commander!")
-                sendNotification({}, "No Active Missions", "No active missions, Commander!");
-            } else {
-                console.log(event.Active.length + " Active missions, Commander!")
-            }
         } else if (event.event === "ReceiveText") {
             if (event.From_Localised === "System Authority Vessel" && (event.Message.includes("Police_Attack") || event.Message.includes("OverwatchAttackRun"))) { //Added due to a bug in ED where police might attack you for no reason. Can be removed if fixed.
                 console.log("Police attack detected, Commander!")
