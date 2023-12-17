@@ -35,6 +35,7 @@ try {
         } else if (event.event === "Missions") {
             if (event.Active.length === 0) {
                 console.log(event.timestamp + ": No active missions, Commander!")
+                sendNotification({}, "No Active Missions", "No active missions, Commander!");
             } else {
                 console.log(event.Active.length + " Active missions, Commander!")
             }
