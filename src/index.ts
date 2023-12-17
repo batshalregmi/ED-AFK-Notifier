@@ -48,6 +48,9 @@ try {
                 console.log("Stolen cargo collected, Commander!")
                 sendNotification({}, "Stolen Cargo Collected", "Stolen cargo collected, Commander!");
             }
+        } else if (event.event === "Died") {
+            console.log("Commander has died!")
+            sendNotification({}, "Commander has died!", "Commander has died!");
         }
     };
 } catch (err) {
