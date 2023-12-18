@@ -9,3 +9,6 @@ A simple tool that notifies you of different events in Elite Dangerous.
 5. Download the Pushbullet app on your devices that you want to receive notifications on.
 6. Start the program.
 
+## Notes
+
+- Run the script BEFORE you join the game to make sure the program can see any missions that you may have. 
