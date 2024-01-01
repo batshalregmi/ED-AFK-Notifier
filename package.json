@@ -17,7 +17,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@kayahr/ed-journal": "^2.5.0",
+    "@kayahr/ed-journal": "^2.5.2",
     "dotenv": "^16.3.1",
     "pushbullet": "^3.0.0"
   }
