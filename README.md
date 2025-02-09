@@ -1,5 +1,5 @@
 # ED-AFK-Notifier
-A simple tool that notifies you about things when you afk farm pirates.
+A simple tool that notifies you about things when you afk.
 
 ## Downloading the program
 
